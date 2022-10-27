@@ -1,0 +1,18 @@
+.result ul {
+  list-style: none;
+  padding: 1.2rem;
+}
+
+.result ul.hide {
+  display: none;
+}
+
+.result ul li {
+  margin-top: 0.7rem;
+  border: 1px solid grey;
+  padding: 0.7rem;
+}
+
+.result ul li:first-child {
+  margin-top: 0;
+}

@@ -1,0 +1,30 @@
+.modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .title {
+  background-color: purple;
+  padding: 1.2rem;
+}
+.modal h3 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.modal .cont {
+  padding: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.modal p {
+  margin-bottom: 1rem;
+  width: 100%;
+}

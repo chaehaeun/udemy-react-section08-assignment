@@ -1,0 +1,8 @@
+.Box {
+  background-color: #fff;
+  border-radius: 1.3rem;
+  width: 98%;
+  max-width: 40rem;
+  overflow: hidden;
+  margin: 2rem auto 0;
+}

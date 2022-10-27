@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import SubmitUsers from "./component/SubmitUsers";
+import styles from "./App.module.css";
+import SubmitResult from "./component/SubmitResult/SubmitResult";
+// import Modal from "./component/Modal/Modal";
 
 function App() {
+  const [userData, setUserData] = useState([]);
+  // const [isValid, setIsValid] = useState(true);
+
+  const addData = (userName, userAge) => {
+    setUserData(
+      (prev) =>
+        (prev = [
+          ...prev,
+          {
+            id: new Date().getTime(),
+            name: userName,
+            age: userAge,
+          },
+        ])
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+      <SubmitUsers addData={addData} />
+      <SubmitResult userData={userData} />
+      {/* <Modal/> */}
     </div>
   );
 }
