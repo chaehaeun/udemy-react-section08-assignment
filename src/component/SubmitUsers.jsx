@@ -4,7 +4,7 @@ import styles from "./SubmitUsers.module.css";
 import Box from "./UI/Box";
 import Button from "./UI/Button";
 
-export default function SubmitUsers({ addData }) {
+export default function SubmitUsers({ addData, modalHandler }) {
   const [nameVal, setNameValue] = useState("");
   const nameChangeHandler = (e) => {
     setNameValue((prev) => (prev = e.target.value));
@@ -17,7 +17,19 @@ export default function SubmitUsers({ addData }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if (nameVal === "" || ageVal === "") {
+      modalHandler("noValue");
+      setNameValue("");
+      setAgeValue("");
+      return;
+    } else if (ageVal < 1) {
+      modalHandler("invalidNum");
+      setNameValue("");
+      setAgeValue("");
+      return;
+    }
     addData(nameVal, ageVal);
+    modalHandler("success");
     setNameValue("");
     setAgeValue("");
   };
@@ -33,7 +45,8 @@ export default function SubmitUsers({ addData }) {
           <label>Age (Year)</label>
           <input
             type="number"
-            min={1}
+            step="1"
+            max="120"
             value={ageVal}
             onChange={ageChangeHandler}
           />
