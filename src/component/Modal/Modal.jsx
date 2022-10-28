@@ -5,11 +5,13 @@ import styles from "./Modal.module.css";
 
 export default function Modal({ type, stateHandler }) {
   const clickHandler = (e) => {
-    if (e.currentTarget !== e.target) {
-      e.preventDefault();
-    } else if (e.currentTarget === e.target) {
+    if (e.currentTarget === e.target) {
       stateHandler(false);
     }
+  };
+
+  const modalCloseBtn = (e) => {
+    stateHandler(false);
   };
 
   return (
@@ -24,7 +26,9 @@ export default function Modal({ type, stateHandler }) {
           ) : (
             <p>값을 입력해주세요.</p>
           )}
-          <Button onClick={(e) => console.log(e.target)}>Okay</Button>
+          <div onClick={modalCloseBtn}>
+            <Button>Okay</Button>
+          </div>
         </div>
       </Box>
     </div>
