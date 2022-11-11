@@ -1,5 +1,7 @@
 ## udemy React 강의 섹션 8 실습
 
+![](https://velog.velcdn.com/images/chaehe_3210/post/6028ec48-5e0e-4200-b27f-e49dd9a2753a/image.gif)
+
 혼자 코드를 작성해보지 않으면 리액트를 영원히 내 힘으로 못 쓸 것 같아서
 이전 연습 코드들만 조금씩 참고해 혼자 만들어보았다.
 
